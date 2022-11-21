@@ -5,6 +5,11 @@
         "lib/**/*.jar",
         "/home/andras/Library/jsoup/jsoup-1.14.2.jar"
     ],
+    "java.completion.filteredTypes" : [
+        "java.awt.List",
+        "com.sun.*",
+        "org.jsoup.*"
+    ],
     "psi-header.config": {
         "forceToTop": true,
         "blankLinesAfter": 1,
