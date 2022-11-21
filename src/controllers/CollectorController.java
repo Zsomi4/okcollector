@@ -26,7 +26,6 @@ import views.MainWindow;
     Ha megszüntetjük szükség lesz egy mainWindow adattagra. 
 */
 
-// A CollectorController osztály
 public class CollectorController extends MainController {
     //A CollectorController osztály konstruktora    
     public CollectorController(MainWindow mainWindow) {
