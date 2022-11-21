@@ -26,20 +26,31 @@ import views.MainWindow;
 
 public class CollectorController extends MainController {
 
+    String utvonal = mainWindow.urlField.getText();
+    Page page = new Page();
+
     public CollectorController(MainWindow mainWindow) {
         super(mainWindow);
-    
-        mainWindow.pasteButton.addActionListener(event -> {
-            System.out.println("beillesztés");
+    }
+
+    public void pasteButtonEvent() {
+            mainWindow.pasteButton.addActionListener(event -> {
+            pasteButtonMessage();
             mainWindow.urlField.paste();
         });
+    }
 
+    public void pasteButtonMessage() {
+        System.out.println("beillesztés");
+    }
+
+    public void startButtonEvent() {
         mainWindow.startButton.addActionListener(event -> {
-            String utvonal = mainWindow.urlField.getText();
+
             if (utvonal.isEmpty()) {
                 utvonal = "https://index.hu";
             }
-            Page page = new Page();
+            
             page.setUrl(utvonal);
             ArrayList<String> w = page.getContent();
 
@@ -50,6 +61,7 @@ public class CollectorController extends MainController {
             }
             Integer wordCount = mainWindow.wordsModel.getSize();
             mainWindow.statusBar.setMessage("Szavak: " + wordCount.toString());
-        });
+        
+        });   
     }   
 }
