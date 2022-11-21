@@ -4,8 +4,8 @@
  * Author: Sallai Andras
  * Github: https://github.com/andteki
  * -----
- * Last Modified: 2021-09-24
- * Modified By: Sallai Andras
+ * Last Modified: 2022-11-21
+ * Modified By: Gubis Zsombor Dániel
  * -----
  * Copyright (c) 2021 Sallai Andras
  * 
@@ -111,6 +111,7 @@ public class MainWindow extends JFrame {
         listButtonsPanel = new JPanel();
         listButtonsPanel.setLayout(new BoxLayout(listButtonsPanel, BoxLayout.PAGE_AXIS));
         listButtonsPanel.add(Box.createVerticalGlue());
+
         listButtonsPanel.add(Box.createVerticalGlue());
         listButtonsPanel.add(deleteButton);
         listButtonsPanel.add(Box.createVerticalGlue());
