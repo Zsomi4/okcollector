@@ -28,7 +28,7 @@ public class CollectorController extends MainController {
 
     public CollectorController(MainWindow mainWindow) {
         super(mainWindow);
-
+    
         mainWindow.pasteButton.addActionListener(event -> {
             System.out.println("beillesztés");
             mainWindow.urlField.paste();

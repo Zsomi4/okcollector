@@ -59,56 +59,81 @@ public class MainWindow extends JFrame {
     public StatusBar statusBar;
 
     public MainWindow() {
-        appLabel = new JLabel("Szógyűjtő");
-        urlField = new JTextField();        
+        setComponents();
+        setCollectorPanel();
+        setListPanel();
+        setDeleteButton();
+        setLowercaseButton();
+        setFillerButton();
+        setSavebutton();
+        setListButtonsPanel();
+        setBottomPanel();
+        setMainFrame();
+    }
 
+    public void setComponents() {
+        appLabel = new JLabel("Szógyűjtő");
+        urlField = new JTextField();
         collectorPanel = new JPanel();
-        collectorPanel.setLayout(new BoxLayout(collectorPanel, BoxLayout.LINE_AXIS));
         pasteButton = new JButton("Beillesztés");
         startButton = new JButton("Start");
         aboutButton = new JButton("Névjegy");
         exitButton = new JButton("Kilépés");
-
-        this.collectorPanel.add(pasteButton);
-        this.collectorPanel.add(startButton);
-        this.collectorPanel.add(aboutButton);
-        this.collectorPanel.add(exitButton);
-
-
         listPanel = new JPanel();
-        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.PAGE_AXIS));
         wordsLabel = new JLabel("Talált szavak");
-
         wordsModel = new DefaultListModel<>();
         wordsList = new JList<>(wordsModel);
         wordsScrollPane = new JScrollPane(wordsList);
+        listButtonsPanel = new JPanel();
+        deleteButton = new JButton("Törlés");
+        filterButton = new JButton("Szűrés");
+        lowercaseButton = new JButton("Kisbetű");
+        saveButton = new JButton("Mentés");
+        bottomPanel = new JPanel();
+    }
+
+    public void setCollectorPanel() {
+        collectorPanel.add(pasteButton);
+        collectorPanel.add(startButton);
+        collectorPanel.add(aboutButton);
+        collectorPanel.add(exitButton);
+        collectorPanel.setLayout(new BoxLayout(collectorPanel, BoxLayout.LINE_AXIS));
+
+    }
+
+    public void setListPanel() {
+        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.PAGE_AXIS));
         listPanel.add(wordsLabel);
         listPanel.add(wordsScrollPane);
+    }
 
-        deleteButton = new JButton("Törlés");
+    public void setDeleteButton() {
         deleteButton.setMinimumSize(new Dimension(110, 25));
         deleteButton.setMaximumSize(new Dimension(110, 25));
         deleteButton.setPreferredSize(new Dimension(110, 25));
-        deleteButton.setMargin(new Insets(20, 20, 20, 20));
+        deleteButton.setMargin(new Insets(20, 20, 20, 20)); 
+    }
 
-        lowercaseButton = new JButton("Kisbetű");
+    public void setLowercaseButton() {
+        
         lowercaseButton.setMinimumSize(new Dimension(110, 25));
         lowercaseButton.setMaximumSize(new Dimension(110, 25));
         lowercaseButton.setPreferredSize(new Dimension(110, 25));
-        
-        filterButton = new JButton("Szűrés");
+    }
+    
+    public void setFillerButton() {      
         filterButton.setMinimumSize(new Dimension(110, 25));
         filterButton.setMaximumSize(new Dimension(110, 25));
         filterButton.setPreferredSize(new Dimension(110, 25));
+    }
 
-        saveButton = new JButton("Mentés");
+    public void setSavebutton() {
         saveButton.setMinimumSize(new Dimension(110, 25));
         saveButton.setMaximumSize(new Dimension(110, 25));
-        saveButton.setPreferredSize(new Dimension(110, 25));
-        
+        saveButton.setPreferredSize(new Dimension(110, 25)); 
+    }
 
-
-        listButtonsPanel = new JPanel();
+    public void setListButtonsPanel() {
         listButtonsPanel.setLayout(new BoxLayout(listButtonsPanel, BoxLayout.PAGE_AXIS));
         listButtonsPanel.add(Box.createVerticalGlue());
 
@@ -122,32 +147,30 @@ public class MainWindow extends JFrame {
         listButtonsPanel.add(saveButton);
         listButtonsPanel.add(Box.createVerticalGlue());
         listButtonsPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+    }  
 
-        bottomPanel = new JPanel();
+    public void setBottomPanel() {
         bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.LINE_AXIS));
         bottomPanel.add(listPanel);
         bottomPanel.add(listButtonsPanel);
-        
+    }
 
+    public void setMainFrame() {
+        setLayout(new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS));
 
-        this.setLayout(new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS));
+        add(appLabel);
+        add(urlField);
+        add(collectorPanel);
+        add(bottomPanel);
 
-        this.add(appLabel);
-        this.add(urlField);
-        this.add(collectorPanel);
-        this.add(bottomPanel);
-        
-        
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // this.setSize(300, 250);
-        this.pack();
+        pack();
         /**
          * A pack() után kell szerepeljen, mert az ablak mérete
          * csak az után van meg.
          */
-        statusBar = new StatusBar(this.getWidth());
-        this.add(statusBar);
-
+        statusBar = new StatusBar(getWidth());
+        add(statusBar);
     }
-    
 }
