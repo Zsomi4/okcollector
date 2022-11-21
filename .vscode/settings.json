@@ -42,12 +42,12 @@
                 "File: <<filename>>",
                 "Created Date: <<filecreated('YYYY-MM-DD HH:mm:ss')>>",
                 "Author: <<author>>",
-                "Github: https://github.com/andteki"
+                "Github: https://github.com/andteki",
                 "-----",
                 "Last Modified: <<filecreated('YYYY-MM-DD')>>",
                 "Modified By: ",
                 "-----",
-                "Copyright (c) <<year>> <<company>>"
+                "Copyright (c) <<year>> <<company>>",
                 "",
                 "<<licensetext>>",
             ],
