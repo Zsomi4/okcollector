@@ -25,6 +25,7 @@ import org.jsoup.nodes.Document;
 
 public class Page {
     public String url;
+       
     public ArrayList<String> getContent() {
         String result = "semmi";
         ArrayList<String> wordList = new ArrayList<>();

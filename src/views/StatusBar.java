@@ -36,20 +36,20 @@ public class StatusBar extends JPanel {
 
     public StatusBar(int width) {        
         setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
-        size(width, 25);
+        setSize(width, 25);
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         statusLabel = new JLabel("Kész");
-        this.setm("Kész");
-        this.add(statusLabel);
+        setMessage("Kész");
+        add(statusLabel);
     }
     
-    public void size(int x, int y) {
+    public void setSize(int x, int y) {
         setMaximumSize(new Dimension(x, y));
         setMinimumSize(new Dimension(x, y));
         setPreferredSize(new Dimension(x, y));
     }
 
-    public void setm(String message) {
-        this.statusLabel.setText(message);
+    public void setMessage(String message) {
+        statusLabel.setText(message);
     }
 }

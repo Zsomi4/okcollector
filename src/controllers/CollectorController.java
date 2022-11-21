@@ -63,7 +63,7 @@ public class CollectorController extends MainController {
                 }                
             } // for ciklus vége
             Integer wordCount = mainWindow.wordsModel.getSize();
-            mainWindow.statusBar.setm("Szavak: " + wordCount.toString());
+            mainWindow.statusBar.setMessage("Szavak: " + wordCount.toString());
         }); //A start eseménykezelő vége
 
          /**************** VÉGE ****************************/
