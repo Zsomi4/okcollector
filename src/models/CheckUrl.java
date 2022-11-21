@@ -15,10 +15,7 @@
 package models;
 
 public class CheckUrl {
-    public void check(String url) {
+    public void checkUrl(String url) {}
 
-    }
-    public void expandProtocol() {
-
-    }
+    public void expandProtocol() {}
 }
